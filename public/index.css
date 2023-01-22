@@ -1,0 +1,84 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("aron-visuals-bZZp1PmHI0E-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+body div {
+    width: 50%;
+    margin:0 auto;
+    text-align: center;
+}
+
+body div img {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+input {
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    color:rgb(0, 255, 247);
+    border: none;
+    text-transform: capitalize;
+    margin: 10px 0;
+    border-bottom: 1px solid rgb(0, 255, 247);
+    font-size: 12px;
+    padding: 10px 20px;
+    background: none;
+}
+
+
+input[type="submit"] {
+    width: 50%;
+    font-size: 12px;
+    margin: 0;
+    background-color: rgb(3, 79, 74);
+    border-radius: 30px;
+    border-bottom: none;
+    padding-inline: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(0, 255, 242, 0.359);
+    
+}
+
+span {
+    font-size: 12px;
+}
+
+span:first-child {
+    color: rgb(167, 209, 211);
+}
+span:nth-child(2) {
+    text-decoration: underline;
+    cursor: pointer;
+    padding-inline: 5px;
+    color: rgb(0, 255, 247)
+}
