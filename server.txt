@@ -1,0 +1,56 @@
+const { request } = require('express');
+const express = require('express');
+const app = express();
+require('dotenv').config();
+let port = process.env.USERS_PORT;
+let jobj = process.env.MY_PACKAGE_JSON;
+let myQuery;
+
+
+app.get("/", (request, response, next) => {
+    request.html = "C:/Users/user/App/public/index.html";
+    next()
+},
+        (request, response) => {
+            response.sendFile(request.html)
+        }
+)
+
+app.get("/user", (request, response) => {
+     myQuery = request.query;
+    console.log(myQuery)
+    response.json({
+        name: `${myQuery.name}`
+    })
+})
+
+app.get("/test/:word/:age", (request, response) => {
+    let para = request.params
+    console.log(para)
+    response.json({
+        word: para.word,
+        age: para.age
+    })
+})
+    
+app.get("/download", (request, response) => {
+    // downloading an image requested by a user from
+    // our html document
+    response.download(request.query.image)
+})
+    // middleware function
+app.use(
+    express.static('C:/Users/user/App/public')
+    )
+
+app.listen(port, () => {
+    console.log(`
+    Requesting https://localhost:${port}
+    Incoming Response from https://localhost:${port}
+    App is starting at https://localhost:${port}
+    App is started at https://localhost:${port}
+    `)
+    console.log(`API KEY ONE is ${process.env.API_KEY_ONE}`)
+    console.log(`Javascript object in our environment file includes ${jobj}`)
+    console.log("Query collector ready.....")
+})

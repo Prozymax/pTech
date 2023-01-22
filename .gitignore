@@ -1,0 +1,3 @@
+.env // this ignores the .env file in our project
+// hereby hiding our API's in our .env file from gettinh to our
+// repository in github when we share our project
